@@ -1,0 +1,26 @@
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+#customers td,
+#customers th {
+    padding: 8px;
+}
+#customers tr:hover {
+    background-color: #ddd;
+}
+h1{
+    color:green ;
+    text-align:center; 
+    margin-top: 100px;
+    font-family: 'Chiller';
+    font-size:4cm;
+
+}
+td{
+    text-align: left;
+    color: blue;
+}
+

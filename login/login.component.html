@@ -1,0 +1,56 @@
+<div id="h">
+<h1><b> Login </b> </h1><br>
+<div class="text-center">
+    <form [formGroup]="formuse" (ngSubmit)="submit()">
+        <label for="username">Username &nbsp; </label>
+        <input type="text" name="username" id="username" placeholder="Username" formControlName="username" required/>
+        <div *ngIf=" f['username'].touched" class="alert alert-danger">
+            <div *ngIf="f['username'].invalid">Username is required</div>
+        </div><br><br>
+        <label>Password &nbsp; </label>
+        <input type="password" name="pwd" id="pwd" placeholder="Password"  formControlName="password" required/>
+            <div *ngIf=" f['password'].touched" class="alert alert-danger">
+                <div *ngIf="f['password'].invalid">Must contain at least one number, uppercase, lowercase and length between 8-15 letter</div>
+            </div>
+            <br><br>
+        <input type="checkbox" name="me" id="me" />
+        <label>Remember me</label><br><br>
+        <button type="submit" class="btn btn-success">Login</button>
+    </form>
+</div><br><br>
+<!-- <tr *ngFor="let homedata of users ">
+    <td>{{homedata.id}}</td>
+    <td>{{homedata.name}}</td>
+    //Change it,,,,
+</tr> -->
+<!-- <div *ngIf="number % 2 == 0; else showOdd">
+
+    Even number {{ number| currency}}
+
+</div>
+
+<ng-template #showOdd>
+
+    `Odd number {{ number| currency}}
+
+</ng-template>
+
+<div ngif="number">
+    addition with number{{ number+2| currency}}
+</div> -->
+<div style="text-align:center;">
+    <button type="submit" (click)="deletedata(0)" class="btn btn-danger">Delete All Data</button>&nbsp;
+    <button type="submit" class="btn btn-primary">Display One Record</button>&nbsp;
+    <button type="submit" class="btn btn-primary" (click)="getAllData()">Get All Data</button>&nbsp;
+</div><br>
+<p style="background-color:gray ;">{{amar}}</p>
+<h2 style="text-align:center;font-family: 'Pacifico', sans-serif;">{{prompt}}</h2>
+<table id="customers">
+    <tr *ngFor="let user of users ">
+        <td>S.No:&nbsp;{{user.id}}</td>&nbsp; &nbsp;
+        <td>Username:&nbsp;{{user.username}}</td>&nbsp; &nbsp;
+        <td>Password:&nbsp;{{user.password}}</td>&nbsp; &nbsp;
+        <button type="submit" (click)="deletedata(user.id)" class="btn btn-danger">DeleteData</button>&nbsp;
+    </tr>
+</table><br>
+</div>
